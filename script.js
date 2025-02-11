@@ -1,22 +1,102 @@
 // Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
-    const bookingForm = document.getElementById('booking-form');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(bookingForm);
-            const data = Object.fromEntries(formData.entries());
-            
-            // For now, just log the data
-            console.log('Booking request:', data);
-            
-            // Show success message
-            alert('Thank you for your booking request! We will contact you soon.');
-            bookingForm.reset();
-        });
+    // Form is now handled by FormSubmit service
+    
+    // Gallery Population
+    const gallery = document.querySelector('#headshots-gallery');
+    
+    // Function to add a gallery item
+    function addGalleryItem(imageNumber) {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        
+        const img = document.createElement('img');
+        img.src = `images/headshot${imageNumber}.jpg`;
+        img.alt = 'Professional actor headshot';
+        img.loading = 'lazy';
+        
+        // Add error handling to check if image exists
+        img.onerror = () => {
+            galleryItem.remove(); // Remove the item if image doesn't exist
+        };
+        
+        galleryItem.appendChild(img);
+        gallery.appendChild(galleryItem);
+        
+        // Add click event for lightbox
+        img.addEventListener('click', () => openLightbox(Array.from(gallery.querySelectorAll('img')).indexOf(img)));
     }
+    
+    // Populate gallery with images
+    function populateGallery() {
+        // Clear existing items
+        gallery.innerHTML = '';
+        
+        // Try to add images until we find one that doesn't exist
+        for (let i = 1; i <= 20; i++) { // Support up to 20 images
+            addGalleryItem(i);
+        }
+    }
+    
+    // Initial population
+    populateGallery();
+
+    // Lightbox functionality
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxGallery = document.querySelector('.lightbox-gallery');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    // Open lightbox
+    function openLightbox(index) {
+        // Clear existing lightbox content
+        lightboxGallery.innerHTML = '';
+        
+        // Get all gallery images
+        const images = Array.from(gallery.querySelectorAll('img'));
+        
+        // Add all images to lightbox
+        images.forEach(img => {
+            const lightboxImg = document.createElement('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxGallery.appendChild(lightboxImg);
+        });
+        
+        // Show lightbox
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Scroll to clicked image
+        const targetImg = lightboxGallery.children[index];
+        if (targetImg) {
+            targetImg.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
+        }
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Add click events to lightbox controls
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close lightbox when clicking outside the images
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -29,77 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
-
-    // Lightbox functionality
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImage = document.querySelector('.lightbox-image');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const prevBtn = document.querySelector('.lightbox-btn.prev');
-    const nextBtn = document.querySelector('.lightbox-btn.next');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    let currentImageIndex = 0;
-
-    // Convert gallery items to array for easier navigation
-    const images = Array.from(galleryItems);
-
-    // Open lightbox
-    function openLightbox(index) {
-        currentImageIndex = index;
-        lightboxImage.src = images[currentImageIndex].src;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    // Close lightbox
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    // Navigate to previous image
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        lightboxImage.src = images[currentImageIndex].src;
-    }
-
-    // Navigate to next image
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        lightboxImage.src = images[currentImageIndex].src;
-    }
-
-    // Add click events to gallery images
-    images.forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
-    });
-
-    // Add click events to lightbox controls
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrevImage);
-    nextBtn.addEventListener('click', showNextImage);
-
-    // Close lightbox when clicking outside the image
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        
-        switch(e.key) {
-            case 'ArrowLeft':
-                showPrevImage();
-                break;
-            case 'ArrowRight':
-                showNextImage();
-                break;
-            case 'Escape':
-                closeLightbox();
-                break;
-        }
     });
 }); 
