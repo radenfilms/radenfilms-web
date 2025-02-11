@@ -68,7 +68,6 @@ h3 {
 .navbar {
     background-color: var(--background);
     box-shadow: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
