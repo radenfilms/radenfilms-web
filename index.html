@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raden Films - Mobile Apps & Headshot Photography</title>
+    <title>Professional Actor Headshots - Raden Films</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,57 +16,149 @@
                 <img src="images/raden-films-w-logo-web.png" alt="Raden Films Logo">
             </a>
             <div class="nav-links">
-                <a href="#mobile-apps" class="has-dropdown">Apps</a>
-                <a href="headshots.html" class="has-dropdown">Headshots</a>
-                <a href="headshots.html#portfolio">Portfolio</a>
-                <a href="headshots.html#pricing">Pricing</a>
-                <a href="headshots.html#booking">Book Now</a>
+                <a href="#booking">Book Now</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#pricing">Pricing</a>
+                <a href="apps.html#mobile-apps">Apps</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Mobile Apps Section -->
-        <section id="mobile-apps" class="hero">
+        <!-- Headshots Hero Section -->
+        <section class="hero headshots-hero">
+            <div class="container hero-split">
+                <div class="hero-image">
+                    <img src="images/headshot1.jpg" alt="Professional headshot example">
+                </div>
+                <div class="hero-content">
+                    <div class="trust-rating">
+                        <span>Excellent</span>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <h1>UNLOCK YOUR<br>CASTING<br>OPPORTUNITIES</h1>
+                    <p class="subtitle">On Location Actor Headshots</p>
+                    <a href="#booking" class="cta-button">BOOK YOUR ACTOR HEADSHOTS TODAY</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="features">
             <div class="container">
-                <div class="hero-header">
-                    <h1>Apps for Every Actor</h1>
-                    <p class="subtitle">Essential tools for the modern actor</p>
-                </div>
-                <div class="app-showcase">
-                    <div class="app-card">
-                        <a href="https://apps.apple.com/us/app/audition-tracker/id6740004926?platform=iphone" class="app-icon" target="_blank">
-                            <img src="images/AT-iphone.png" alt="Audition Tracker App Icon">
-                        </a>
-                        <h3>Audition Tracker</h3>
-                        <p class="app-description">Stay organized and focused with Audition Tracker, the essential app for actors and performers. Effortlessly manage your auditions, track callbacks, and monitor booking statuses all in one place. With features like detailed audition records, customizable reminders, and motivational quotes, Audition Tracker helps you stay on top of your game.</p>
-                        <div class="app-meta">
-                            <div class="app-price">$4.99</div>
-                        </div>
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h2>STAND OUT FROM THE CROWD WITH ON LOCATION CINEMATIC HEADSHOTS</h2>
+                        <p class="feature-description">Marko will choose the location together with you depandent on the type of roles you're going for. Since Marko is a cinematographer as well, he will be able to invision and assist you in making your headshot choices.</p>
                     </div>
-
-                    <div class="app-card coming-soon">
-                        <div class="app-icon placeholder">
-                            <span class="app-initial">R</span>
+                    <div class="feature-image-container">
+                        <div class="feature-image">
+                            <img src="images/Marko raden1.jpg" alt="Professional headshot photography studio setup">
                         </div>
-                        <h3>Actor's Reader</h3>
-                        <p class="app-description">Your ultimate scene study companion. Practice your lines, analyze scenes, and perfect your delivery with our innovative reading assistant. Coming soon to help you master your craft.</p>
-                        <div class="app-meta">
-                            <div class="coming-soon-badge">Coming Soon</div>
-                        </div>
-                    </div>
-
-                    <div class="app-card coming-soon">
-                        <div class="app-icon placeholder">
-                            <span class="app-initial">A</span>
-                        </div>
-                        <h3>Actor's Actions</h3>
-                        <p class="app-description">Discover and explore acting techniques, objectives, and actions. Build your character's journey with our comprehensive action verb database and scene analysis tools.</p>
-                        <div class="app-meta">
-                            <div class="coming-soon-badge">Coming Soon</div>
-                        </div>
+                        <p class="photographer-credit">Marko Raden</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <div class="gallery" id="headshots-gallery">
+                    <!-- Gallery items will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <div class="lightbox-content">
+                <div class="lightbox-gallery">
+                    <!-- Images will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Packages & Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Essential</h3>
+                        <p class="price">$195</p>
+                        <ul>
+                            <li>3 Digital Images</li>
+                            <li>2 Outfit Changes</li>
+                            <li>Basic Retouching</li>
+                        </ul>
+                        <a href="#booking" class="btn-primary">Book Now</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3>Professional</h3>
+                        <p class="price">$295</p>
+                        <ul>
+                            <li>6 Digital Images</li>
+                            <li>3 Outfit Changes</li>
+                            <li>Advanced Retouching</li>
+                            <li>Digital Gallery</li>
+                        </ul>
+                        <a href="#booking" class="btn-primary">Book Now</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Premium</h3>
+                        <p class="price">$495</p>
+                        <ul>
+                            <li>10 Digital Images</li>
+                            <li>Professional Makeup</li>
+                            <li>4 Outfit Changes</li>
+                            <li>Premium Retouching</li>
+                            <li>Digital Gallery</li>
+                            <li>Rush Delivery</li>
+                        </ul>
+                        <a href="#booking" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section id="booking" class="booking">
+            <div class="container">
+                <h2>Book Your Session</h2>
+                <form id="booking-form" class="contact-form" action="https://formsubmit.co/radenfilms@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://radenfilms.com/thank-you">
+                    <input type="hidden" name="_subject" value="New Headshot Booking Request">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="package">Select Package</label>
+                        <select id="package" name="package" required>
+                            <option value="">Choose a package...</option>
+                            <option value="essential">Essential - $195</option>
+                            <option value="professional">Professional - $295</option>
+                            <option value="premium">Premium - $495</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Request Booking</button>
+                </form>
             </div>
         </section>
     </main>
