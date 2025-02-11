@@ -303,7 +303,7 @@ h3 {
 }
 
 .gallery-item {
-    flex: 0 0 300px; /* Fixed width for each item */
+    flex: 0 0 300px;
     position: relative;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -311,6 +311,10 @@ h3 {
     transition: transform 0.3s ease;
     aspect-ratio: 4/5;
     scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -318,6 +322,7 @@ h3 {
 }
 
 .gallery-item img {
+    opacity: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
