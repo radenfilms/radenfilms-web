@@ -580,8 +580,47 @@ footer {
         padding: 3rem 1.5rem;
     }
 
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .pricing-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        text-align: left;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    .pricing-card h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-card .price {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    .pricing-card ul {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+    .pricing-card ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-card .btn-primary {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
     .pricing-card.featured {
         transform: none;
+        border: 2px solid var(--accent-color);
     }
 
     .contact-form {
