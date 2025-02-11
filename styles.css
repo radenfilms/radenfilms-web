@@ -179,6 +179,7 @@ h3 {
 .hero-content {
     padding: 2rem 4rem;
     max-width: 700px;
+    text-align: center;
 }
 
 .hero h1 {
@@ -188,20 +189,22 @@ h3 {
     line-height: 1.1;
     font-family: "Playfair Display", serif;
     letter-spacing: -1px;
+    text-align: center;
 }
 
 .hero .subtitle {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
     letter-spacing: 2px;
     line-height: 1.8;
+    text-align: center;
 }
 
 .trust-rating {
     margin-bottom: 2.5rem;
     font-size: 1rem;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .trust-rating .stars {
