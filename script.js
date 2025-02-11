@@ -2,60 +2,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Form is now handled by FormSubmit service
     
-    // Gallery Population
+    // Get all gallery images
     const gallery = document.querySelector('#headshots-gallery');
+    const galleryImages = gallery.querySelectorAll('img');
     
-    // Function to add a gallery item
-    function addGalleryItem(imageNumber) {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = 'gallery-item';
-        
-        const img = document.createElement('img');
-        img.src = `images/headshot${imageNumber}.jpg`;
-        img.alt = 'Professional actor headshot';
-        img.loading = 'lazy';
-        
-        // Add error handling to check if image exists
-        img.onerror = () => {
-            galleryItem.remove(); // Remove the item if image doesn't exist
-        };
-        
-        galleryItem.appendChild(img);
-        gallery.appendChild(galleryItem);
-        
-        // Add click event for lightbox
-        img.addEventListener('click', () => openLightbox(Array.from(gallery.querySelectorAll('img')).indexOf(img)));
-    }
-    
-    // Populate gallery with images
-    function populateGallery() {
-        // Clear existing items
-        gallery.innerHTML = '';
-        
-        // Try to add images until we find one that doesn't exist
-        for (let i = 1; i <= 20; i++) { // Support up to 20 images
-            addGalleryItem(i);
-        }
-    }
-    
-    // Initial population
-    populateGallery();
-
     // Lightbox functionality
     const lightbox = document.querySelector('.lightbox');
     const lightboxGallery = document.querySelector('.lightbox-gallery');
     const closeBtn = document.querySelector('.lightbox-close');
+
+    // Add click events to all gallery images
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+    });
 
     // Open lightbox
     function openLightbox(index) {
         // Clear existing lightbox content
         lightboxGallery.innerHTML = '';
         
-        // Get all gallery images
-        const images = Array.from(gallery.querySelectorAll('img'));
-        
         // Add all images to lightbox
-        images.forEach(img => {
+        galleryImages.forEach(img => {
             const lightboxImg = document.createElement('img');
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
