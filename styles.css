@@ -544,7 +544,7 @@ footer {
     }
 
     .hero-image {
-        height: 60vh;
+        display: none;
     }
 
     .hero-content {
