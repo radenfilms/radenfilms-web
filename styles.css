@@ -609,34 +609,30 @@ footer {
     }
 
     .pricing-card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        text-align: left;
-        align-items: center;
-        padding: 1.5rem;
+        display: block;
+        text-align: center;
+        padding: 2rem;
     }
 
     .pricing-card h3 {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .pricing-card .price {
-        margin-bottom: 0;
-        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
     }
 
     .pricing-card ul {
-        margin: 0;
-        padding-left: 1.5rem;
+        margin: 0 0 2rem 0;
+        padding-left: 0;
     }
 
     .pricing-card ul li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
 
     .pricing-card .btn-primary {
-        grid-column: 1 / -1;
-        margin-top: 1rem;
         width: 100%;
     }
 
