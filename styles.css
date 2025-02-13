@@ -603,49 +603,47 @@ footer {
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: block;
         padding: 0 1rem;
     }
 
     .pricing-card {
         width: 100%;
-        max-width: none;
+        margin-bottom: 2rem;
         padding: 2rem;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
+        display: block;
+    }
+
+    .pricing-card:last-child {
+        margin-bottom: 0;
     }
 
     .pricing-card h3 {
-        width: 100%;
-        text-align: left;
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .pricing-card .price {
-        width: 100%;
-        text-align: left;
-        margin-bottom: 1.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
     }
 
     .pricing-card ul {
-        width: 100%;
-        text-align: left;
-        padding-left: 1.5rem;
-        list-style: disc;
+        text-align: center;
+        list-style: none;
+        padding: 0;
     }
 
     .pricing-card ul li {
-        text-align: left;
-        margin-bottom: 0.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
     .pricing-card .btn-primary {
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
 
     .pricing-card.featured {
