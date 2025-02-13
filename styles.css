@@ -373,7 +373,7 @@ h3 {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -603,20 +603,24 @@ footer {
     }
 
     .pricing-grid {
-        display: block;
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 3rem auto 0;
         padding: 0 1rem;
     }
 
     .pricing-card {
         width: 100%;
-        margin-bottom: 2rem;
+        margin: 0;
         padding: 2rem;
         text-align: center;
-        display: block;
+        transform: none !important;
     }
 
-    .pricing-card:last-child {
-        margin-bottom: 0;
+    .pricing-card.featured {
+        transform: none !important;
+        order: -1;
+        border: 2px solid var(--accent-color);
     }
 
     .pricing-card h3 {
@@ -644,11 +648,6 @@ footer {
     .pricing-card .btn-primary {
         width: 100%;
         margin-top: 1.5rem;
-    }
-
-    .pricing-card.featured {
-        transform: none;
-        border: 2px solid var(--accent-color);
     }
 
     .contact-form {
