@@ -1146,10 +1146,22 @@ footer {
     }
 
     .step-item {
-        padding: 1.5rem;
+        padding: 2rem;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .step-number {
         font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .step-item h3 {
+        text-align: center;
+    }
+
+    .step-item p {
+        text-align: center;
     }
 } 
