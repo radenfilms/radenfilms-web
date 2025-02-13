@@ -604,23 +604,42 @@ footer {
 
     .pricing-grid {
         grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: 3rem auto 0;
-        padding: 0 1rem;
+        gap: 2rem;
+        padding: 0;
+        max-width: none;
+        margin: 3rem 0 0;
     }
 
     .pricing-card {
         width: 100%;
+        max-width: none;
         margin: 0;
         padding: 2rem;
         text-align: center;
         transform: none !important;
+        border-radius: 0;
     }
 
     .pricing-card.featured {
         transform: none !important;
         order: -1;
-        border: 2px solid var(--accent-color);
+        border-left: none;
+        border-right: none;
+        border-top: 2px solid var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+    }
+
+    .pricing {
+        padding: 6rem 0 0 0;
+    }
+
+    .pricing .container {
+        padding: 0;
+        max-width: none;
+    }
+
+    .pricing h2 {
+        padding: 0 1rem;
     }
 
     .pricing-card h3 {
