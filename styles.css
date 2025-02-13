@@ -612,6 +612,13 @@ footer {
         display: block;
         text-align: center;
         padding: 2rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+        border: 2px solid var(--accent-color);
     }
 
     .pricing-card h3 {
@@ -630,15 +637,11 @@ footer {
 
     .pricing-card ul li {
         margin-bottom: 0.75rem;
+        text-align: center;
     }
 
     .pricing-card .btn-primary {
         width: 100%;
-    }
-
-    .pricing-card.featured {
-        transform: none;
-        border: 2px solid var(--accent-color);
     }
 
     .contact-form {
