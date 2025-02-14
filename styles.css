@@ -696,7 +696,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 3.8rem;
+        font-size: 4.94rem;
         text-align: center;
         margin-bottom: 1.5rem;
         line-height: 1.1;
@@ -704,7 +704,7 @@ footer {
     }
 
     .hero .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.56rem;
         text-align: center;
         margin-bottom: 0.5rem;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
@@ -715,8 +715,8 @@ footer {
     }
 
     .cta-button {
-        font-size: 1.1rem;
-        padding: 1.2rem 2.5rem;
+        font-size: 1.43rem;
+        padding: 1.56rem 3.25rem;
         width: 100%;
         text-align: center;
         max-width: 400px;
