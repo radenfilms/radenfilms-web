@@ -186,7 +186,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5));
+    background: linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 1));
     z-index: 1;
 }
 
@@ -627,7 +627,7 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5));
+        background: linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 1));
         z-index: 1;
     }
 
