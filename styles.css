@@ -186,7 +186,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 1));
+    background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
     z-index: 1;
 }
 
@@ -231,7 +231,7 @@ h3 {
     font-family: "Playfair Display", serif;
     letter-spacing: -1px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero .subtitle {
@@ -240,7 +240,7 @@ h3 {
     letter-spacing: 2px;
     line-height: 1.8;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .trust-rating {
@@ -627,7 +627,7 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(rgba(26, 26, 26, 1), rgba(26, 26, 26, 1));
+        background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
         z-index: 1;
     }
 
@@ -648,14 +648,14 @@ footer {
         text-align: center;
         margin-bottom: 1.5rem;
         line-height: 1.1;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .hero .subtitle {
         font-size: 1.2rem;
         text-align: center;
         margin-bottom: 0.5rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .trust-rating {
