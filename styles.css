@@ -591,6 +591,24 @@ select {
     background-color: var(--secondary-color);
 }
 
+/* reCAPTCHA Styles */
+.g-recaptcha {
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .g-recaptcha {
+        transform-origin: left top;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.85);
+    }
+}
+
 /* Footer */
 footer {
     background-color: rgba(26, 26, 26, 0.2);

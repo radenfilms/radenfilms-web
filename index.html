@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Add reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="site-notice">🚧 Our website is currently under construction. Some features may be temporarily unavailable. Thank you for your patience! 🚧</div>
@@ -181,7 +183,7 @@
                     <input type="hidden" name="_next" value="https://radenfilms.com/thank-you">
                     <input type="hidden" name="_subject" value="New Headshot Booking Request">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="true">
                     <input type="hidden" name="_url" value="https://radenfilms.com">
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -207,6 +209,10 @@
                     <div class="form-group">
                         <label for="message">Additional Information</label>
                         <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <!-- Add reCAPTCHA element -->
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
                     </div>
                     <button type="submit" class="btn-primary">Request Booking</button>
                 </form>
