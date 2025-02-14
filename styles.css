@@ -689,8 +689,10 @@ footer {
 
     .pricing-card h3 {
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 1rem;
+        padding: 0 1rem;
+        word-wrap: break-word;
     }
 
     .pricing-card .price {
