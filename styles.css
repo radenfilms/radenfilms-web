@@ -95,7 +95,7 @@ h3 {
 
 /* Navigation */
 .navbar {
-    background-color: transparent;
+    background-color: rgba(26, 26, 26, 0.2);
     box-shadow: none;
     padding: 1rem 0;
     position: fixed;
@@ -593,7 +593,7 @@ select {
 
 /* Footer */
 footer {
-    background-color: transparent;
+    background-color: rgba(26, 26, 26, 0.2);
     padding: 2rem 0;
     text-align: center;
     color: var(--light-text);
