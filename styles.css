@@ -95,7 +95,7 @@ h3 {
 
 /* Navigation */
 .navbar {
-    background-color: var(--background);
+    background-color: transparent;
     box-shadow: none;
     padding: 1rem 0;
     position: fixed;
@@ -593,7 +593,7 @@ select {
 
 /* Footer */
 footer {
-    background-color: var(--light-background);
+    background-color: transparent;
     padding: 2rem 0;
     text-align: center;
     color: var(--light-text);
