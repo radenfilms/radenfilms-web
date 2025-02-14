@@ -203,6 +203,7 @@ h3 {
     bottom: 0;
     background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-split {
@@ -977,6 +978,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+    position: relative;
+    z-index: 3;
 }
 
 .app-card {
@@ -986,6 +989,8 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     text-align: center;
+    position: relative;
+    z-index: 3;
 }
 
 .app-card:hover {
@@ -1002,6 +1007,8 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block;
     text-decoration: none;
+    position: relative;
+    z-index: 3;
 }
 
 .app-icon:hover {
