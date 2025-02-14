@@ -167,17 +167,27 @@ h3 {
 .hero {
     padding: 80px 0 0 0;
     text-align: left;
-    background-color: var(--background);
     color: white;
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('images/Bokah.jpg');
+    background: url('images/Bokah.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5));
+    z-index: 1;
 }
 
 .hero-split {
@@ -189,7 +199,7 @@ h3 {
     max-width: none;
     padding: 0;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-image {
@@ -209,6 +219,8 @@ h3 {
     padding: 2rem 4rem;
     max-width: 700px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -602,10 +614,21 @@ footer {
         align-items: center;
         justify-content: center;
         position: relative;
-        background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('images/Bokah.jpg');
+        background: url('images/Bokah.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5));
+        z-index: 1;
     }
 
     .hero-content {
@@ -617,7 +640,7 @@ footer {
         justify-content: center;
         min-height: calc(100vh - 70px);
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
 
     .hero h1 {
