@@ -1077,7 +1077,28 @@ footer {
 /* Video Showcase Styles */
 .video-showcase {
     padding: 6rem 0;
-    background-color: var(--light-background);
+    background: url('images/Bokah2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
+    z-index: 1;
+}
+
+.video-showcase .container {
+    position: relative;
+    z-index: 2;
 }
 
 .video-grid {
