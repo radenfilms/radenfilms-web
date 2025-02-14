@@ -861,6 +861,54 @@ footer {
     .feature-text h2 {
         font-size: 2.2rem;
     }
+
+    /* Mobile App Showcase Styles */
+    .app-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    .app-card {
+        width: 100%;
+        margin: 0;
+        padding: 3rem 2rem;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .app-card:last-child {
+        border-bottom: none;
+    }
+
+    .app-icon {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 2rem;
+    }
+
+    .app-card h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .app-description {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .app-price {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .coming-soon-badge {
+        font-size: 1.1rem;
+        padding: 0.7rem 2rem;
+    }
 }
 
 /* App Showcase Styles */
