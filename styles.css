@@ -7,8 +7,21 @@
     --background: #1a1a1a;
     --light-background: #2a2a2a;
     --accent-color: #C5A572;
-    --heading-font: "Playfair Display", serif;
+    --heading-font: "VOGUE", serif;
     --body-font: "Inter", sans-serif;
+}
+
+/* Import VOGUE font */
+@import url("https://db.onlinewebfonts.com/c/d06ffd4c1cbb196d95e3f2e9c7c538f9?family=VOGUE");
+
+@font-face {
+    font-family: "VOGUE";
+    src: url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.eot");
+    src: url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/d06ffd4c1cbb196d95e3f2e9c7c538f9.svg#VOGUE")format("svg");
 }
 
 /* Site Notice Banner */
@@ -904,52 +917,63 @@ footer {
     .app-showcase {
         display: flex;
         flex-direction: column;
-        gap: 0;
-        padding: 0;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
     .app-card {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1.5rem;
         width: 100%;
         margin: 0;
-        padding: 3rem 2rem;
-        border-radius: 0;
-        box-shadow: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .app-card:last-child {
-        border-bottom: none;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: left;
+        align-items: center;
     }
 
     .app-icon {
-        width: 140px;
-        height: 140px;
-        margin: 0 auto 2rem;
+        width: 120px;
+        height: 120px;
+        margin: 0;
+        grid-row: span 3;
     }
 
     .app-card h3 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        margin: 0 0 0.5rem 0;
+        padding: 0;
     }
 
     .app-description {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        padding: 0 1rem;
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+        grid-column: 2;
+    }
+
+    .app-meta {
+        align-items: flex-start;
+        margin: 0.5rem 0 0 0;
     }
 
     .app-price {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.4rem;
+        margin: 0;
     }
 
     .coming-soon-badge {
-        font-size: 1.1rem;
-        padding: 0.7rem 2rem;
+        margin: 0;
+    }
+
+    .app-card.coming-soon .app-icon.placeholder {
+        width: 120px;
+        height: 120px;
+        margin: 0;
     }
 }
 
-/* Additional mobile optimization for smaller screens */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 3.4rem;
@@ -962,6 +986,37 @@ footer {
     .cta-button {
         font-size: 1.1rem;
         padding: 1.3rem 2.5rem;
+    }
+
+    .app-showcase {
+        padding: 1rem 0.5rem;
+    }
+
+    .app-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .app-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .app-card.coming-soon .app-icon.placeholder {
+        width: 100px;
+        height: 100px;
+    }
+
+    .app-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .app-description {
+        font-size: 0.9rem;
+    }
+
+    .app-price {
+        font-size: 1.2rem;
     }
 }
 
