@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information - Raden Films</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/d06ffd4c1cbb196d95e3f2e9c7c538f9?family=VOGUE" rel="stylesheet">
+</head>
+<body>
+    <div class="site-notice">🚧 Our website is currently under construction. Some features may be temporarily unavailable. Thank you for your patience! 🚧</div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/raden-films-w-logo-web.png" alt="Raden Films Logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Headshots</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#booking">Book Now</a>
+                <a href="cinematography.html">Cinematography</a>
+                <a href="apps.html#mobile-apps">Apps</a>
+                <a href="info.html">Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <h2>OUR STORY</h2>
+                        <p class="feature-description">Founded by Marko Raden, a cinematographer with a passion for visual storytelling, Raden Films has evolved into a multifaceted creative studio. We specialize in actor headshots, cinematography, and innovative mobile applications for the entertainment industry.</p>
+                    </div>
+                    <div class="feature-image-container">
+                        <div class="feature-image">
+                            <img src="images/Marko Raden1.jpg" alt="Marko Raden - Founder">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="process">
+            <div class="container">
+                <h2>OUR SERVICES</h2>
+                <p class="process-intro">We offer a comprehensive range of creative services to help you succeed in the entertainment industry.</p>
+                
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <h3>Actor Headshots</h3>
+                        <p>Professional on-location headshot photography that captures your unique personality and casting potential. Using cinematic lighting techniques and carefully chosen locations, we create images that help you stand out in the industry.</p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <h3>Cinematography</h3>
+                        <p>From short films to music videos, we bring stories to life through compelling visuals. Our cinematography services combine technical expertise with artistic vision to create memorable viewing experiences.</p>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <h3>Mobile Apps</h3>
+                        <p>We develop innovative mobile applications designed specifically for actors and entertainment professionals. Our apps help streamline your career management and enhance your creative process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="booking">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form class="contact-form" action="https://formsubmit.co/radenfilms@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://radenfilms.com/thank-you">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_url" value="https://radenfilms.com">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Choose a subject...</option>
+                            <option value="headshots">Headshot Photography</option>
+                            <option value="cinematography">Cinematography</option>
+                            <option value="apps">Mobile Apps</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha" data-sitekey="6LfIUtcqAAAAAJZYWf7Fep8fRw-7mM5m4R4LFeO6"></div>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Raden Films. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
