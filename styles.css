@@ -513,13 +513,16 @@ h3 {
 }
 
 .pricing-card {
-    width: 100%;
-    padding: 3rem 2rem;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 2rem;
     text-align: center;
-    background-color: white;
-    border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .pricing-card.featured {
@@ -543,7 +546,9 @@ h3 {
 
 .pricing-card ul {
     list-style: none;
-    margin-bottom: 2rem;
+    padding: 0;
+    margin: 2rem 0;
+    flex-grow: 1;
 }
 
 .pricing-card ul li {
@@ -594,6 +599,18 @@ h3 {
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+.pricing-card .btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
 }
 
 /* Booking Form */
@@ -1839,7 +1856,7 @@ footer {
 /* Casting Directors Section */
 .casting-section {
     padding: 4rem 0;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -1858,13 +1875,13 @@ footer {
 
 .casting-text h2 {
     font-family: 'VOGUE', sans-serif;
-    color: #000000;
+    color: #000000 !important;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .requirement-item {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1882,7 +1899,7 @@ footer {
 }
 
 .requirement-item p {
-    color: #000000;
+    color: #000000 !important;
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
@@ -1893,7 +1910,7 @@ footer {
     font-size: 2rem;
     text-align: center;
     margin-top: 3rem;
-    color: #000000;
+    color: #000000 !important;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
