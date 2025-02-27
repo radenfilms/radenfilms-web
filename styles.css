@@ -201,7 +201,7 @@ h3 {
     display: flex;
     align-items: center;
     position: relative;
-    background: url('images/Bokah.jpg');
+    background: url('images/flare.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -241,16 +241,6 @@ h3 {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.founder-name {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    color: #FFFFFF;
-    font-size: 2rem;
-    font-family: 'VOGUE', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .info-text {
