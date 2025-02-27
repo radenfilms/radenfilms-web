@@ -348,7 +348,10 @@ h3 {
 
 .feature-text h2 {
     font-size: 3.5rem;
-    text-align: left;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
     margin-bottom: 2rem;
     line-height: 1.1;
     color: #000000;
@@ -1588,5 +1591,91 @@ footer {
     .process-cta {
         padding: 2rem 1rem;
         margin-top: 0;
+    }
+}
+
+/* Requirements Grid Styles */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.requirement-item {
+    background: var(--light-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.requirement-item:hover {
+    transform: translateY(-5px);
+}
+
+.requirement-item h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 5px;
+    font-family: var(--heading-font);
+}
+
+.requirement-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.key-takeaway {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    font-family: var(--heading-font);
+    white-space: normal;
+    padding: 0 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .requirements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .requirement-item {
+        padding: 1.5rem;
+    }
+    
+    .requirement-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .key-takeaway {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+        letter-spacing: 1.5px;
+        line-height: 1.4;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .key-takeaway {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        line-height: 1.4;
+        padding: 0 1rem;
     }
 }
