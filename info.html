@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/d06ffd4c1cbb196d95e3f2e9c7c538f9?family=VOGUE" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="site-notice">🚧 Our website is currently under construction. Some features may be temporarily unavailable. Thank you for your patience! 🚧</div>
@@ -30,53 +31,55 @@
     </nav>
 
     <main>
-        <!-- About Section -->
-        <section class="info-section">
-            <div class="container">
-                <div class="info-content">
-                    <div class="info-text">
-                        <h2>OUR STORY</h2>
-                        <p class="info-description">Founded by Marko Raden, a cinematographer with a passion for visual storytelling, Raden Films has evolved into a multifaceted creative studio. We specialize in actor headshots, cinematography, and innovative mobile applications for the entertainment industry.</p>
-                    </div>
-                    <div class="info-image-container">
-                        <div class="info-image">
-                            <img src="images/Marko Raden1.jpg" alt="Marko Raden - Founder">
-                        </div>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-split">
+                <div class="hero-content">
+                    <h1>OUR STORY</h1>
+                    <p class="info-text">Founded by Marko Raden, a cinematographer with a passion for visual storytelling, Raden Films has evolved into a multifaceted creative studio. We specialize in actor headshots, cinematography, and innovative mobile applications for the entertainment industry.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/Marko Raden1.jpg" alt="Marko Raden - Founder">
+                    <div class="founder-name">Marko Raden</div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section class="process">
+        <section class="casting-section">
             <div class="container">
-                <h2>OUR SERVICES</h2>
-                <p class="process-intro">We offer a comprehensive range of creative services to help you succeed in the entertainment industry.</p>
-                
-                <div class="steps-grid">
-                    <div class="step-item">
-                        <div class="step-number">01</div>
-                        <h3>Actor Headshots</h3>
-                        <p>Professional on-location headshot photography that captures your unique personality and casting potential. Using cinematic lighting techniques and carefully chosen locations, we create images that help you stand out in the industry.</p>
+                <div class="casting-content">
+                    <div class="casting-text">
+                        <h2>OUR SERVICES</h2>
                     </div>
+                    <div class="requirements-grid">
+                        <div class="requirement-item">
+                            <h3>Actor Headshots</h3>
+                            <p>Professional on-location headshot photography that captures your unique personality and casting potential. Using cinematic lighting techniques and carefully chosen locations, we create images that help you stand out in the industry.</p>
+                        </div>
 
-                    <div class="step-item">
-                        <div class="step-number">02</div>
-                        <h3>Cinematography</h3>
-                        <p>From short films to music videos, we bring stories to life through compelling visuals. Our cinematography services combine technical expertise with artistic vision to create memorable viewing experiences.</p>
-                    </div>
+                        <div class="requirement-item">
+                            <h3>Cinematography</h3>
+                            <p>From short films to music videos, we bring stories to life through compelling visuals. Our cinematography services combine technical expertise with artistic vision to create memorable viewing experiences.</p>
+                        </div>
 
-                    <div class="step-item">
-                        <div class="step-number">03</div>
-                        <h3>Mobile Apps</h3>
-                        <p>We develop innovative mobile applications designed specifically for actors and entertainment professionals. Our apps help streamline your career management and enhance your creative process.</p>
+                        <div class="requirement-item">
+                            <h3>Mobile Apps</h3>
+                            <p>We develop innovative mobile applications designed specifically for actors and entertainment professionals. Our apps help streamline your career management and enhance your creative process.</p>
+                        </div>
+
+                        <div class="requirement-item">
+                            <h3>Creative Vision</h3>
+                            <p>Every project is approached with a unique creative vision, ensuring that we deliver results that exceed expectations and help our clients achieve their goals in the entertainment industry.</p>
+                        </div>
                     </div>
+                    <h2 class="key-takeaway">Bringing your vision to life!</h2>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="booking">
+        <section id="contact" class="booking">
             <div class="container">
                 <h2>Get In Touch</h2>
                 <form class="contact-form" action="https://formsubmit.co/radenfilms@gmail.com" method="POST">
