@@ -208,6 +208,13 @@ h3 {
     overflow: hidden;
 }
 
+.headshots-hero {
+    background: url('images/Bokah.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -818,10 +825,6 @@ footer {
         align-items: center;
         justify-content: center;
         position: relative;
-        background: url('images/Bokah.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
 
     .hero::before {
