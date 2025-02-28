@@ -35,7 +35,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 .site-notice + .navbar {
@@ -198,7 +198,7 @@ h3 {
     display: none;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 1001;
+    z-index: 2001;
     background: none;
     border: none;
 }
@@ -854,7 +854,7 @@ footer {
         transition: left 0.3s ease;
         backdrop-filter: blur(10px);
         margin: 0;
-        z-index: 999;
+        z-index: 2000;
     }
 
     .nav-links.active {
