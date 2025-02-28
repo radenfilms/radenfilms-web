@@ -201,18 +201,16 @@ h3 {
     display: flex;
     align-items: center;
     position: relative;
-    background: url('images/flare.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('images/flare.jpg') center/cover no-repeat;
     overflow: hidden;
 }
 
 .headshots-hero {
-    background: url('images/Bokah.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('images/Bokah.jpg') center/cover no-repeat;
+}
+
+.info-hero {
+    background: url('images/flare.jpg') center/cover no-repeat;
 }
 
 .hero::before {
@@ -818,6 +816,69 @@ footer {
         height: 70px;
     }
 
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(26, 26, 26, 0.95);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    /* Hero Section Mobile Styles */
     .hero {
         padding: 70px 0 0 0;
         min-height: 100vh;
@@ -845,14 +906,14 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: calc(100vh - 106px); /* Adjusted to account for site notice */
+        min-height: calc(100vh - 106px);
         position: relative;
         z-index: 2;
         max-width: none;
     }
 
     .hero h1 {
-        font-size: 3.8rem;
+        font-size: 3rem;
         text-align: center;
         margin-bottom: 2rem;
         line-height: 1.1;
@@ -861,7 +922,7 @@ footer {
     }
 
     .hero .subtitle {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         text-align: center;
         margin-bottom: 0.8rem;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
@@ -869,24 +930,25 @@ footer {
 
     .trust-rating {
         margin-bottom: 3rem;
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     .cta-button {
-        font-size: 1.2rem;
-        padding: 1.4rem 2.8rem;
+        font-size: 1.1rem;
+        padding: 1.2rem 2.5rem;
         width: 90%;
         text-align: center;
         max-width: 400px;
         margin-top: 1rem;
     }
 
+    /* Pricing Section Mobile Styles */
     .pricing-grid {
         display: flex;
         flex-direction: column;
-        gap: 0;
+        gap: 1rem;
         margin: 0;
-        width: 100%;
+        padding: 1rem;
     }
 
     .pricing-card {
@@ -895,45 +957,22 @@ footer {
         margin: 0;
         padding: 2rem;
         text-align: center;
-        transform: none !important;
-        border-radius: 0;
-        box-shadow: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .pricing-card.featured {
-        transform: none !important;
-        border: none;
-        border-top: 2px solid var(--accent-color);
-        border-bottom: 2px solid var(--accent-color);
-        order: 2;
+        transform: scale(1.02);
+        border: 2px solid var(--accent-color);
+        order: -1;
     }
 
-    .pricing-card:first-child {
-        order: 1;
-    }
-
-    .pricing-card:last-child {
-        order: 3;
-    }
-
-    .pricing {
-        padding: 6rem 0 0 0;
-        overflow: hidden;
-    }
-
-    .pricing .container {
-        padding: 0;
-        max-width: none;
-        width: 100%;
-        overflow: hidden;
-    }
-
+    /* Process Section Mobile Styles */
     .steps-grid {
         display: flex;
         flex-direction: column;
-        gap: 0;
-        margin: 0;
+        gap: 1.5rem;
+        padding: 1rem;
     }
 
     .step-item {
@@ -942,185 +981,50 @@ footer {
         margin: 0;
         padding: 2rem;
         text-align: center;
-        border-radius: 0;
-        box-shadow: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .step-item:last-child {
-        border-bottom: none;
-    }
-
-    .process {
-        padding: 4rem 0 0 0;
-        overflow: hidden;
-    }
-
-    .process .container {
-        padding: 0;
-        max-width: none;
-    }
-
+    /* General Mobile Styles */
     body {
         overflow-x: hidden;
         width: 100%;
     }
 
     .container {
-        overflow: hidden;
+        padding: 0 1rem;
         width: 100%;
     }
 
-    .pricing h2 {
-        padding: 0 1rem;
-    }
-
-    .pricing-card h3 {
-        text-align: center;
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        padding: 0 1rem;
-        word-wrap: break-word;
-    }
-
-    .pricing-card .price {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .pricing-card ul {
-        text-align: center;
-        list-style: none;
-        padding: 0;
-    }
-
-    .pricing-card ul li {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .pricing-card .btn-primary {
-        width: 100%;
-        margin-top: 1.5rem;
-    }
-
+    /* Form Mobile Styles */
     .contact-form {
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
 
-    .nav-links {
-        gap: 1.5rem;
-        font-size: 0.8rem;
-    }
-
-    .logo-text {
-        font-size: 1rem;
-    }
-
-    .feature-text h2 {
-        font-size: 2.2rem;
-    }
-
-    /* Mobile App Showcase Styles */
+    /* App Showcase Mobile Styles */
     .app-showcase {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
         padding: 1rem;
+        gap: 1.5rem;
     }
 
     .app-card {
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 1.5rem;
-        width: 100%;
-        margin: 0;
         padding: 1.5rem;
         border-radius: 1rem;
-        text-align: left;
-        align-items: center;
     }
 
     .app-icon {
-        width: 120px;
-        height: 120px;
-        margin: 0;
-        grid-row: span 3;
-    }
-
-    .app-card h3 {
-        font-size: 1.8rem;
-        margin: 0 0 0.5rem 0;
-        padding: 0;
-    }
-
-    .app-description {
-        font-size: 1rem;
-        margin: 0;
-        padding: 0;
-        grid-column: 2;
-    }
-
-    .app-meta {
-        align-items: flex-start;
-        margin: 0.5rem 0 0 0;
-    }
-
-    .app-price {
-        font-size: 1.4rem;
-        margin: 0;
-    }
-
-    .coming-soon-badge {
-        margin: 0;
-    }
-
-    .app-card.coming-soon .app-icon.placeholder {
-        width: 120px;
-        height: 120px;
-        margin: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 3.4rem;
-    }
-
-    .hero .subtitle {
-        font-size: 1.2rem;
-    }
-
-    .cta-button {
-        font-size: 1.1rem;
-        padding: 1.3rem 2.5rem;
-    }
-
-    .app-showcase {
-        padding: 1rem 0.5rem;
-    }
-
-    .app-card {
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .app-icon {
-        width: 100px;
-        height: 100px;
-    }
-
-    .app-card.coming-soon .app-icon.placeholder {
         width: 100px;
         height: 100px;
     }
 
     .app-card h3 {
         font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .app-description {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     .app-price {
@@ -1128,10 +1032,42 @@ footer {
     }
 }
 
-/* Extra small screens */
-@media (max-width: 360px) {
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Additional Mobile Breakpoint */
+@media (max-width: 480px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .step-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .app-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .app-icon {
+        margin: 0 auto 1rem;
     }
 }
 
