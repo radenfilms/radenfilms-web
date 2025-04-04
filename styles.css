@@ -214,19 +214,22 @@ h3 {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0 0 0;
-    text-align: left;
+    padding: 0;
+    text-align: center;
     color: white;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    background: url('images/flare.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/headshot1.jpg') center 33% no-repeat;
+    background-size: cover;
     overflow: hidden;
+    transition: background-image 1s ease-in-out;
 }
 
 .headshots-hero {
-    background: url('images/Bokah.jpg') center/cover no-repeat;
+    transition: background-image 1s ease-in-out;
 }
 
 .info-hero {
@@ -240,90 +243,121 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
     z-index: 1;
-    pointer-events: none;
 }
 
 .hero-split {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 4rem;
-    padding: 4rem 0;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    min-height: 100vh;
+    width: 100%;
+    background: transparent;
 }
 
 .hero-content {
-    flex: 1;
-}
-
-.hero-image {
-    flex: 1;
-    position: relative;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.info-text {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: #FFFFFF;
-    margin-top: 2rem;
-    max-width: 600px;
 }
 
 .hero h1 {
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
-    font-family: "VOGUE", serif;
     letter-spacing: 5px;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: var(--heading-font);
+    line-height: 1.2;
+    color: #ffffff;
 }
 
 .hero .subtitle {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
     letter-spacing: 2px;
-    line-height: 1.8;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
 }
 
 .trust-rating {
-    margin-bottom: 2.5rem;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--body-font);
+}
+
+.trust-rating span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
 }
 
 .trust-rating .stars {
-    color: #00b67a;
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: #FFD700;
+    letter-spacing: 2px;
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
     color: white;
-    padding: 1.2rem 3rem;
+    padding: 1rem 2.5rem;
     border-radius: 100px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1rem;
     transition: all 0.3s ease;
     letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-links {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 3;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
 }
 
 /* Features Section */
@@ -907,7 +941,7 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
         z-index: 1;
     }
 
@@ -925,7 +959,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         text-align: center;
         margin-bottom: 2rem;
         line-height: 1.1;
@@ -934,9 +968,9 @@ footer {
     }
 
     .hero .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-align: center;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1.5rem;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
@@ -1053,11 +1087,11 @@ footer {
 /* Additional Mobile Breakpoint */
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .hero .subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .cta-button {
@@ -1916,5 +1950,18 @@ footer {
         font-size: 1.3rem;
         letter-spacing: 2px;
         padding: 0 1rem;
+    }
+}
+
+.fade-bg {
+    animation: fadeBackground 1s;
+}
+
+@keyframes fadeBackground {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
     }
 }

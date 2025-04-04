@@ -117,4 +117,38 @@ document.addEventListener('DOMContentLoaded', function() {
             body.style.overflow = '';
         }
     });
+
+    const heroSection = document.querySelector('.headshots-hero');
+    const images = [
+        'images/headshot1.jpg',
+        'images/headshot2.jpg',
+        'images/headshot3.jpg',
+        'images/headshot4.jpg',
+        'images/headshot6.jpg'
+    ];
+    let currentImageIndex = 0;
+
+    function rotateBackground() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        const newBackground = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${images[currentImageIndex]}')`;
+        
+        heroSection.style.backgroundImage = newBackground;
+        heroSection.style.backgroundPosition = 'center 33%';
+        heroSection.style.backgroundRepeat = 'no-repeat';
+        heroSection.style.backgroundSize = 'cover';
+        
+        // Add fade effect
+        heroSection.classList.remove('fade-bg');
+        void heroSection.offsetWidth; // Trigger reflow
+        heroSection.classList.add('fade-bg');
+    }
+
+    // Rotate background every 10 seconds
+    setInterval(rotateBackground, 10000);
+
+    // Preload images
+    images.forEach(imagePath => {
+        const img = new Image();
+        img.src = imagePath;
+    });
 }); 
