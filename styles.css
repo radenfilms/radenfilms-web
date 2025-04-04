@@ -57,7 +57,8 @@
     }
 
     .hero {
-        padding-top: 106px; /* Account for site notice + navbar */
+        padding-top: 60px; /* Account for mobile navbar */
+        background-position: center 25%; /* Adjust image position for mobile */
     }
 }
 
@@ -926,66 +927,65 @@ footer {
 
     /* Hero Section Mobile Styles */
     .hero {
-        padding: 70px 0 0 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+        padding-top: 60px; /* Account for mobile navbar */
+        background-position: center 25%; /* Adjust image position for mobile */
     }
 
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-        z-index: 1;
+    .headshots-hero {
+        background-position: center 25%;
+    }
+
+    .hero-split {
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 40vh; /* Push content down to make room for face in background */
     }
 
     .hero-content {
-        padding: 2rem 1.5rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: calc(100vh - 106px);
-        position: relative;
-        z-index: 2;
-        max-width: none;
+        padding: 1.5rem;
+        margin: 0 1rem;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
     }
 
     .hero h1 {
-        font-size: 3.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        line-height: 1.1;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-        max-width: 15ch;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        letter-spacing: 3px;
     }
 
     .hero .subtitle {
-        font-size: 1.2rem;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
     }
 
     .trust-rating {
-        margin-bottom: 3rem;
-        transform: scale(1.1);
+        margin-bottom: 1.5rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.9rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 1.2rem;
     }
 
     .cta-button {
-        font-size: 1.1rem;
-        padding: 1.2rem 2.5rem;
-        width: 90%;
-        text-align: center;
-        max-width: 400px;
-        margin-top: 1rem;
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+        width: 100%; /* Make button full width on mobile */
+        max-width: 300px; /* Limit maximum width */
+    }
+
+    .social-links {
+        bottom: 1.5rem;
+        gap: 2rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
     }
 
     /* Pricing Section Mobile Styles */
@@ -1086,17 +1086,39 @@ footer {
 
 /* Additional Mobile Breakpoint */
 @media (max-width: 480px) {
+    .hero {
+        background-position: center 20%; /* Further adjust image position for very small screens */
+    }
+
+    .headshots-hero {
+        background-position: center 20%;
+    }
+
+    .hero-split {
+        padding-top: 35vh; /* Adjust content position for smaller screens */
+    }
+
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
+        letter-spacing: 2px;
     }
 
     .hero .subtitle {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-content {
+        padding: 1.25rem;
     }
 
     .cta-button {
-        font-size: 1rem;
-        padding: 1rem 2rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .social-links {
+        bottom: 1rem;
+        gap: 1.5rem;
     }
 
     .pricing-card h3 {
@@ -1963,5 +1985,59 @@ footer {
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Handle tall mobile screens */
+@media (max-height: 700px) and (max-width: 768px) {
+    .hero-split {
+        padding-top: 30vh;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .social-links {
+        bottom: 0.75rem;
+    }
+}
+
+/* Handle landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        background-position: center 15%;
+    }
+
+    .hero-split {
+        padding-top: 20vh;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .cta-button {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .social-links {
+        bottom: 0.5rem;
     }
 }
