@@ -2096,3 +2096,139 @@ footer {
         bottom: 0.5rem;
     }
 }
+
+/* Responsive Text Sizes */
+@media (max-width: 1440px) {
+    .hero-content {
+        max-width: 500px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.75rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.7rem;
+        padding: 0.65rem 1.6rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-content {
+        max-width: 450px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.65rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.65rem;
+        padding: 0.6rem 1.4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        max-width: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.7rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.6rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 0.85rem;
+    }
+
+    .cta-button {
+        font-size: 0.6rem;
+        padding: 0.55rem 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        max-width: 375px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.65rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.55rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        font-size: 0.55rem;
+        padding: 0.5rem 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        max-width: 300px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero .subtitle {
+        font-size: 0.6rem;
+    }
+
+    .trust-rating span {
+        font-size: 0.5rem;
+    }
+
+    .trust-rating .stars {
+        font-size: 0.75rem;
+    }
+
+    .cta-button {
+        font-size: 0.5rem;
+        padding: 0.45rem 1rem;
+    }
+}
