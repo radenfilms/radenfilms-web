@@ -350,9 +350,9 @@ h3 {
 
 .hero-split {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     z-index: 2;
     padding: 2rem;
@@ -363,9 +363,9 @@ h3 {
 }
 
 .hero-content {
-    text-align: left;
-    max-width: 50%;
-    margin: 0;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
     padding: 1.4625rem;
     background: transparent;
     border-radius: 5px;
@@ -2135,26 +2135,21 @@ footer {
 /* Responsive Text Sizes */
 @media screen and (max-width: 1440px) {
     .hero-content {
-        max-width: 500px;
+        max-width: 800px;
         transform: translateY(-25px);
     }
-
     .hero h1 {
         font-size: 2.8rem;
     }
-
     .hero .subtitle {
         font-size: 0.85rem;
     }
-
     .trust-rating span {
         font-size: 0.75rem;
     }
-
     .trust-rating .stars {
         font-size: 1rem;
     }
-
     .cta-button {
         font-size: 0.7rem;
         padding: 0.65rem 1.6rem;
@@ -2163,26 +2158,21 @@ footer {
 
 @media screen and (max-width: 1200px) {
     .hero-content {
-        max-width: 450px;
+        max-width: 700px;
         transform: translateY(-20px);
     }
-
     .hero h1 {
         font-size: 2.4rem;
     }
-
     .hero .subtitle {
         font-size: 0.75rem;
     }
-
     .trust-rating span {
         font-size: 0.65rem;
     }
-
     .trust-rating .stars {
         font-size: 0.9rem;
     }
-
     .cta-button {
         font-size: 0.65rem;
         padding: 0.6rem 1.4rem;
@@ -2191,26 +2181,21 @@ footer {
 
 @media screen and (max-width: 992px) {
     .hero-content {
-        max-width: 400px;
+        max-width: 600px;
         transform: translateY(-15px);
     }
-
     .hero h1 {
         font-size: 2.2rem;
     }
-
     .hero .subtitle {
         font-size: 0.7rem;
     }
-
     .trust-rating span {
         font-size: 0.6rem;
     }
-
     .trust-rating .stars {
         font-size: 0.85rem;
     }
-
     .cta-button {
         font-size: 0.6rem;
         padding: 0.55rem 1.3rem;
@@ -2219,26 +2204,21 @@ footer {
 
 @media screen and (max-width: 768px) {
     .hero-content {
-        max-width: 375px;
+        max-width: 500px;
         transform: translateY(-10px);
     }
-
     .hero h1 {
         font-size: 2rem;
     }
-
     .hero .subtitle {
         font-size: 0.65rem;
     }
-
     .trust-rating span {
         font-size: 0.55rem;
     }
-
     .trust-rating .stars {
         font-size: 0.8rem;
     }
-
     .cta-button {
         font-size: 0.55rem;
         padding: 0.5rem 1.2rem;
@@ -2247,26 +2227,21 @@ footer {
 
 @media screen and (max-width: 576px) {
     .hero-content {
-        max-width: 300px;
+        max-width: 400px;
         transform: translateY(-5px);
     }
-
     .hero h1 {
         font-size: 1.8rem;
     }
-
     .hero .subtitle {
         font-size: 0.6rem;
     }
-
     .trust-rating span {
         font-size: 0.5rem;
     }
-
     .trust-rating .stars {
         font-size: 0.75rem;
     }
-
     .cta-button {
         font-size: 0.5rem;
         padding: 0.45rem 1rem;
