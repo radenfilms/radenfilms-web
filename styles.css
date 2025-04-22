@@ -1889,6 +1889,7 @@ footer {
 .info-text {
     text-align: left;
     padding: 2rem 0;
+    order: 1;
 }
 
 .info-text h2 {
@@ -1913,6 +1914,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    order: 2;
 }
 
 .info-image {
@@ -1941,6 +1943,7 @@ footer {
 
     .info-text {
         order: 1;
+        text-align: center;
     }
 
     .info-image-container {
