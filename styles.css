@@ -305,7 +305,36 @@ h3 {
 }
 
 .info-hero {
-    background: url('images/flare.jpg') center/cover no-repeat;
+    background: url('images/flare.jpg') center/cover no-repeat !important;
+}
+
+.info-hero .hero-split {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 4rem 2rem;
+}
+
+.info-hero .hero-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    order: 1;
+}
+
+.info-hero .hero-image {
+    flex: 1;
+    max-width: 45%;
+    order: 2;
+}
+
+.info-hero .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero::before {
