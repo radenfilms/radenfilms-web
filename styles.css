@@ -198,9 +198,10 @@ h3 {
     box-shadow: none;
     padding: 1rem 0;
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 2000;
     height: 80px;
     backdrop-filter: blur(10px);
 }
@@ -268,9 +269,10 @@ h3 {
     display: none;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 2001;
+    z-index: 3002;
     background: none;
     border: none;
+    position: relative;
 }
 
 .hamburger span {
@@ -984,28 +986,37 @@ footer {
     }
 
     .navbar {
-        height: 70px;
-        background-color: rgba(26, 26, 26, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 2000;
+        padding: 1rem;
     }
 
     .hamburger {
         display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 3002;
     }
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
-        background-color: rgba(26, 26, 26, 0.95);
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 3001;
         padding: 2rem;
-        transition: left 0.3s ease;
-        backdrop-filter: blur(10px);
-        margin: 0;
-        z-index: 2000;
     }
 
     .nav-links.active {
@@ -1013,20 +1024,18 @@ footer {
     }
 
     .nav-links a {
-        font-size: 1.2rem;
-        padding: 1rem 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        color: white;
-    }
-
-    .nav-links a:last-child {
-        border-bottom: none;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
+        opacity: 1;
+        visibility: visible;
     }
 
     .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -1034,7 +1043,12 @@ footer {
     }
 
     .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Ensure hero section doesn't overlap mobile menu */
+    .hero {
+        margin-top: 60px;
     }
 
     .logo {
@@ -1296,7 +1310,7 @@ footer {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 3000;
 }
 
 .lightbox.active {
@@ -1783,13 +1797,23 @@ footer {
 
 @media (max-width: 768px) {
     .requirements-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         padding: 1.5rem 1rem;
         gap: 1rem;
     }
     
     .requirement-item {
         padding: 1.5rem;
+    }
+
+    .requirement-item h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .requirement-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 }
 
@@ -1833,6 +1857,7 @@ footer {
 .info-text {
     text-align: left;
     padding: 2rem 0;
+    order: 1;
 }
 
 .info-text h2 {
@@ -1857,6 +1882,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    order: 2;
 }
 
 .info-image {
@@ -1885,6 +1911,7 @@ footer {
 
     .info-text {
         order: 1;
+        text-align: center;
     }
 
     .info-image-container {

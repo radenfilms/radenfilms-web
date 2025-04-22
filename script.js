@@ -2,6 +2,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Form is now handled by FormSubmit service
     
+    // Mobile menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    const body = document.body;
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !hamburger.contains(e.target) && 
+                !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+    }
+
     // Gallery functionality - only run if gallery exists
     const gallery = document.querySelector('#headshots-gallery');
     if (gallery) {
@@ -19,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Open lightbox
         function openLightbox(index) {
+            // Don't open lightbox if mobile menu is active
+            if (document.querySelector('.nav-links.active')) {
+                return;
+            }
             // Clear existing lightbox content
             lightboxGallery.innerHTML = '';
             
@@ -83,72 +123,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    const body = document.body;
-
-    if (hamburger) {
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-    }
-
-    // Close mobile menu when clicking a link
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (navLinks.classList.contains('active') && 
-            !hamburger.contains(e.target) && 
-            !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
-        }
-    });
-
+    // Background rotation - only run if hero section exists
     const heroSection = document.querySelector('.headshots-hero');
-    const images = [
-        'images/headshot1.jpg',
-        'images/headshot2.jpg',
-        'images/headshot3.jpg',
-        'images/headshot4.jpg',
-        'images/headshot6.jpg'
-    ];
-    let currentImageIndex = 0;
+    if (heroSection) {
+        const images = [
+            'images/headshot1.jpg',
+            'images/headshot2.jpg',
+            'images/headshot3.jpg',
+            'images/headshot4.jpg',
+            'images/headshot6.jpg'
+        ];
+        let currentImageIndex = 0;
 
-    function rotateBackground() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        const newBackground = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${images[currentImageIndex]}')`;
-        
-        heroSection.style.backgroundImage = newBackground;
-        heroSection.style.backgroundPosition = 'center 33%';
-        heroSection.style.backgroundRepeat = 'no-repeat';
-        heroSection.style.backgroundSize = 'cover';
-        
-        // Add fade effect
-        heroSection.classList.remove('fade-bg');
-        void heroSection.offsetWidth; // Trigger reflow
-        heroSection.classList.add('fade-bg');
+        function rotateBackground() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const newBackground = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${images[currentImageIndex]}')`;
+            
+            heroSection.style.backgroundImage = newBackground;
+            heroSection.style.backgroundPosition = 'center 33%';
+            heroSection.style.backgroundRepeat = 'no-repeat';
+            heroSection.style.backgroundSize = 'cover';
+            
+            // Add fade effect
+            heroSection.classList.remove('fade-bg');
+            void heroSection.offsetWidth; // Trigger reflow
+            heroSection.classList.add('fade-bg');
+        }
+
+        // Rotate background every 10 seconds
+        setInterval(rotateBackground, 10000);
+
+        // Preload images
+        images.forEach(imagePath => {
+            const img = new Image();
+            img.src = imagePath;
+        });
     }
-
-    // Rotate background every 10 seconds
-    setInterval(rotateBackground, 10000);
-
-    // Preload images
-    images.forEach(imagePath => {
-        const img = new Image();
-        img.src = imagePath;
-    });
 }); 
