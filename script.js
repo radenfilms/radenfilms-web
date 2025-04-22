@@ -8,34 +8,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinksItems = document.querySelectorAll('.nav-links a');
     const body = document.body;
 
-    if (hamburger) {
+    if (hamburger && navLinks) {
         hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
             e.stopPropagation();
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
-    }
 
-    // Close mobile menu when clicking a link
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
+        // Close mobile menu when clicking a link
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+            });
         });
-    });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (navLinks.classList.contains('active') && 
-            !hamburger.contains(e.target) && 
-            !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
-        }
-    });
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !hamburger.contains(e.target) && 
+                !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+    }
 
     // Gallery functionality - only run if gallery exists
     const gallery = document.querySelector('#headshots-gallery');
