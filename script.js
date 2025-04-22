@@ -2,6 +2,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Form is now handled by FormSubmit service
     
+    // Mobile menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    const body = document.body;
+
+    if (hamburger) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !hamburger.contains(e.target) && 
+            !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            body.style.overflow = '';
+        }
+    });
+
     // Gallery functionality - only run if gallery exists
     const gallery = document.querySelector('#headshots-gallery');
     if (gallery) {
@@ -19,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Open lightbox
         function openLightbox(index) {
+            // Don't open lightbox if mobile menu is active
+            if (document.querySelector('.nav-links.active')) {
+                return;
+            }
             // Clear existing lightbox content
             lightboxGallery.innerHTML = '';
             
@@ -80,41 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
             });
-        }
-    });
-
-    // Mobile menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    const body = document.body;
-
-    if (hamburger) {
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-        });
-    }
-
-    // Close mobile menu when clicking a link
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (navLinks.classList.contains('active') && 
-            !hamburger.contains(e.target) && 
-            !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            body.style.overflow = '';
         }
     });
 
