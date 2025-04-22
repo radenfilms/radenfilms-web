@@ -2272,3 +2272,40 @@ footer {
         padding: 0.45rem 1rem;
     }
 }
+
+#mobile-apps.hero {
+    background: url('images/flare.jpg') center/cover no-repeat !important;
+    min-height: auto;
+    padding: 4rem 0;
+}
+
+#mobile-apps.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25));
+    z-index: 1;
+}
+
+#mobile-apps .container {
+    position: relative;
+    z-index: 2;
+}
+
+#mobile-apps .hero-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#mobile-apps .hero-header h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#mobile-apps .hero-header .subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
