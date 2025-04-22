@@ -833,12 +833,19 @@ footer {
 
 @media (max-width: 768px) {
     .navbar {
-        height: 70px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2001;
         background-color: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
     }
 
     .hamburger {
         display: block;
+        cursor: pointer;
+        z-index: 2002;
     }
 
     .nav-links {
