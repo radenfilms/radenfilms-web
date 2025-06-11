@@ -35,16 +35,60 @@
     </nav>
 
     <main>
-        <!-- Full Screen Video Section -->
+        <!-- Hero Section -->
+        <section class="hero info-hero" style="background: url('images/flare.jpg') center/cover no-repeat !important;">
+            <div class="container hero-split">
+                <div class="hero-content">
+                    <h1>CINEMATIC<br>STORYTELLING</h1>
+                    <p class="subtitle">Bringing your vision to life through compelling visuals and artistic cinematography</p>
+                    <a href="#contact" class="cta-button">START YOUR PROJECT</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="casting-section">
+            <div class="container">
+                <div class="casting-content">
+                    <div class="casting-text">
+                        <h2>OUR CINEMATOGRAPHY SERVICES</h2>
+                    </div>
+                    <div class="requirements-grid">
+                        <div class="requirement-item">
+                            <h3>Short Films</h3>
+                            <p>From concept to final cut, we create visually stunning short films that tell compelling stories. Our expertise in lighting, composition, and camera movement brings your narrative to life.</p>
+                        </div>
+
+                        <div class="requirement-item">
+                            <h3>Music Videos</h3>
+                            <p>Transform your music into a visual masterpiece. We combine creative cinematography with dynamic editing to create music videos that capture the essence of your sound.</p>
+                        </div>
+
+                        <div class="requirement-item">
+                            <h3>Commercial Work</h3>
+                            <p>Professional cinematography services for commercials and brand content. We help businesses tell their story through high-quality, engaging visuals that resonate with their audience.</p>
+                        </div>
+
+                        <div class="requirement-item">
+                            <h3>Documentary</h3>
+                            <p>Capturing real stories with artistic integrity. Our documentary work combines journalistic approach with cinematic quality to create impactful visual narratives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
         <section class="fullscreen-video">
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/IAkuMNoNTfI?autoplay=1&controls=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
-        <!-- Video Showcase Section -->
+        <!-- Portfolio Section -->
         <section class="video-showcase">
             <div class="container">
+                <h2>SELECTED WORKS</h2>
                 <div class="video-grid">
                     <div class="video-item">
                         <div class="video-wrapper">
@@ -62,6 +106,44 @@
                         <p class="video-description">An intimate portrait exploring the delicate transformation of identity and self-discovery through evocative cinematography.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="booking">
+            <div class="container">
+                <h2>Start Your Project</h2>
+                <form class="contact-form" action="https://formsubmit.co/radenfilms@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://radenfilms.com/thank-you">
+                    <input type="hidden" name="_subject" value="New Cinematography Project Inquiry">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_url" value="https://radenfilms.com">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select project type...</option>
+                            <option value="short-film">Short Film</option>
+                            <option value="music-video">Music Video</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="documentary">Documentary</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project, timeline, and vision..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Inquiry</button>
+                </form>
             </div>
         </section>
     </main>
