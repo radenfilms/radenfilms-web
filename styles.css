@@ -609,17 +609,23 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(26, 26, 26, 0), rgba(26, 26, 26, 0));
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7));
     z-index: 1;
 }
 
 .portfolio .container {
     position: relative;
     z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .portfolio h2 {
     color: var(--text-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -629,14 +635,31 @@ h3 {
     padding: 2rem 0;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) rgba(255, 255, 255, 0.1);
+    -ms-overflow-style: none;
     scroll-snap-type: x mandatory;
-    padding-bottom: 20px; /* Space for scrollbar */
+    padding-bottom: 20px;
+    margin: 0 -2rem;
+    padding: 2rem;
 }
 
 .gallery::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    height: 8px;
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.gallery::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
 .gallery-item {
@@ -644,7 +667,7 @@ h3 {
     position: relative;
     overflow: hidden;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     aspect-ratio: 4/5;
     scroll-snap-align: start;
@@ -659,7 +682,6 @@ h3 {
 }
 
 .gallery-item img {
-    opacity: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -669,6 +691,47 @@ h3 {
 
 .gallery-item:hover img {
     transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 4rem 0;
+    }
+
+    .portfolio h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .gallery {
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 0 -1rem;
+    }
+
+    .gallery-item {
+        flex: 0 0 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio {
+        padding: 3rem 0;
+    }
+
+    .portfolio h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .gallery {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .gallery-item {
+        flex: 0 0 200px;
+    }
 }
 
 /* Pricing Section */
