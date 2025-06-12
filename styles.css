@@ -640,6 +640,8 @@ h3 {
     scroll-snap-type: x mandatory;
     padding: 2rem;
     margin: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .gallery::-webkit-scrollbar {
@@ -673,6 +675,8 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 .gallery-item:hover {
@@ -692,44 +696,32 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .portfolio {
-        padding: 4rem 0;
-    }
-
-    .portfolio h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
     .gallery {
         gap: 1.5rem;
         padding: 1.5rem;
         margin: 0;
+        width: 100%;
     }
 
     .gallery-item {
         flex: 0 0 250px;
+        margin: 0;
+        padding: 0;
     }
 }
 
 @media (max-width: 480px) {
-    .portfolio {
-        padding: 3rem 0;
-    }
-
-    .portfolio h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-    }
-
     .gallery {
         gap: 1rem;
         padding: 1rem;
         margin: 0;
+        width: 100%;
     }
 
     .gallery-item {
         flex: 0 0 200px;
+        margin: 0;
+        padding: 0;
     }
 }
 
