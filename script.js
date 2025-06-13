@@ -127,11 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.headshots-hero');
     if (heroSection) {
         const images = [
-            'images/headshot1.jpg',
-            'images/headshot2.jpg',
-            'images/headshot3.jpg',
-            'images/headshot4.jpg',
-            'images/headshot5.jpg',
+            'images/headshot1-hero.jpg',
+            'images/headshot2-hero.jpg',
+            'images/headshot3-hero.jpg',
+            'images/headshot4-hero.jpg',
+            'images/headshot5-hero.jpg',
             'images/headshot6.jpg'
         ];
         let currentImageIndex = 0;
@@ -158,6 +158,109 @@ document.addEventListener('DOMContentLoaded', function() {
         images.forEach(imagePath => {
             const img = new Image();
             img.src = imagePath;
+        });
+    }
+});
+
+// Performance optimizations
+document.addEventListener('DOMContentLoaded', () => {
+    // Use Intersection Observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    // Observe all images with data-src attribute
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+
+    // Debounce function for scroll events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Optimize scroll handling
+    const handleScroll = debounce(() => {
+        // Your scroll handling code here
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Optimize gallery scrolling
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        gallery.addEventListener('mousedown', (e) => {
+            isDown = true;
+            gallery.style.cursor = 'grabbing';
+            startX = e.pageX - gallery.offsetLeft;
+            scrollLeft = gallery.scrollLeft;
+        });
+
+        gallery.addEventListener('mouseleave', () => {
+            isDown = false;
+            gallery.style.cursor = 'grab';
+        });
+
+        gallery.addEventListener('mouseup', () => {
+            isDown = false;
+            gallery.style.cursor = 'grab';
+        });
+
+        gallery.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 2;
+            gallery.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Optimize form submission
+    const form = document.getElementById('booking-form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                if (response.ok) {
+                    window.location.href = form.querySelector('input[name="_next"]').value;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                submitButton.textContent = 'Try Again';
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     }
 }); 
