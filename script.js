@@ -131,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'images/headshot2-hero.jpg',
             'images/headshot3-hero.jpg',
             'images/headshot4-hero.jpg',
-            'images/headshot5-hero.jpg',
-            'images/headshot6.jpg'
+            'images/headshot5-hero.jpg'
         ];
         let currentImageIndex = 0;
 
