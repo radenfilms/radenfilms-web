@@ -127,11 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSection = document.querySelector('.headshots-hero');
     if (heroSection) {
         const images = [
-            'images/headshot1-hero.jpg',
-            'images/headshot2-hero.jpg',
-            'images/headshot3-hero.jpg',
-            'images/headshot4-hero.jpg',
-            'images/headshot5-hero.jpg',
+            'images/headshot1.jpg',
+            'images/headshot2.jpg',
+            'images/headshot3.jpg',
+            'images/headshot4.jpg',
+            'images/headshot5.jpg',
             'images/headshot6.jpg'
         ];
         let currentImageIndex = 0;
